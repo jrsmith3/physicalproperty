@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from setuptools import setup
-import physicalproperty
+execfile("physicalproperty/version.py")
 
 setup(name="physicalproperty",
-      version=physicalproperty.__version__,
+      version=__version__,
       author="Joshua Ryan Smith",
       author_email="joshua.r.smith@gmail.com",
       packages=["physicalproperty"],
