@@ -16,6 +16,6 @@ setup(name="physicalproperty",
                    "Development Status :: 5 - Production/Stable",
                    "Intended Audience :: Science/Research",
                    "Topic :: Scientific/Engineering :: Physics",
-                   "Natural Language :: English",],
+                   "Natural Language :: English", ],
       install_requires=["numpy",
                         "astropy"],)

@@ -17,7 +17,7 @@ class PhysicalProperty(object):
 
     The purpose of this class is to constrain data that represents a physical quantity according to the specifications in the above list.
     """
-    def __init__(self, unit = units.dimensionless_unscaled, up_bnd = np.inf, lo_bnd = -np.inf):
+    def __init__(self, unit=units.dimensionless_unscaled, up_bnd=np.inf, lo_bnd=-np.inf):
         if up_bnd < lo_bnd:
             raise ValueError("up_bnd must be greater than lo_bnd.")
 

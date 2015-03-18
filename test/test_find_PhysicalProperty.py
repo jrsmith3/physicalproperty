@@ -31,12 +31,12 @@ class MockSubclass(MockBaseClass):
         self.sub_attrib_1 = 1.3
         self.sub_attrib_2 = 1.4
 
-        self.my_PhysicalProperties = ["sub_attrib_1", 
-            "sub_attrib_2",]
+        self.my_PhysicalProperties = ["sub_attrib_1",
+            "sub_attrib_2", ]
 
         self.family_PhysicalProperties = ["attrib",
-            "sub_attrib_1", 
-            "sub_attrib_2",]
+            "sub_attrib_1",
+            "sub_attrib_2", ]
 
 # Tests
 # =====

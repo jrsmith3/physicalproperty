@@ -23,9 +23,9 @@ class MockClassUserDefinedUnitAmp(object):
     """
     `PhysicalProperty` public data attribute w/ user-defined unit as amp.
     """
-    attrib = PhysicalProperty(unit = "A")
+    attrib = PhysicalProperty(unit="A")
 
-    def __init__(self, current = 1):
+    def __init__(self, current=1):
         """
         Initialize the `PhysicalProperty` public data attribute.
         """
@@ -60,7 +60,7 @@ class StandaloneInstantiation(unittest.TestCase):
         """
         pp = PhysicalProperty()
         qty = units.Quantity(100., "km")
-        
+
         self.assertRaises(units.UnitsError, pp.__set__, MockClassEmpty, qty)
 
     def test_set_numeric_above_up_bnd(self):
@@ -69,7 +69,7 @@ class StandaloneInstantiation(unittest.TestCase):
         """
         ubnd = 10.
 
-        pp = PhysicalProperty(up_bnd = ubnd)
+        pp = PhysicalProperty(up_bnd=ubnd)
         self.assertRaises(ValueError, pp.__set__, MockClassEmpty, 12.)
 
     def test_set_numeric_below_lo_bnd(self):
@@ -78,7 +78,7 @@ class StandaloneInstantiation(unittest.TestCase):
         """
         lbnd = -10.
 
-        pp = PhysicalProperty(lo_bnd = lbnd)
+        pp = PhysicalProperty(lo_bnd=lbnd)
         self.assertRaises(ValueError, pp.__set__, MockClassEmpty, -12.)
 
     def test_set_Quantity_above_up_bnd_same_units(self):
@@ -87,7 +87,7 @@ class StandaloneInstantiation(unittest.TestCase):
         """
         ubnd = 10.
         unit = "mm"
-        pp = PhysicalProperty(unit = unit, up_bnd = ubnd)
+        pp = PhysicalProperty(unit=unit, up_bnd=ubnd)
 
         qty = units.Quantity(12., unit)
         self.assertRaises(ValueError, pp.__set__, MockClassEmpty, qty)
@@ -98,7 +98,7 @@ class StandaloneInstantiation(unittest.TestCase):
         """
         ubnd = 10.
         unit = "mm"
-        pp = PhysicalProperty(unit = unit, up_bnd = ubnd)
+        pp = PhysicalProperty(unit=unit, up_bnd=ubnd)
 
         # Note 1e3mm = 1m. Thus, 1m > 10mm.
         qty = units.Quantity(1., "m")
@@ -110,7 +110,7 @@ class StandaloneInstantiation(unittest.TestCase):
         """
         lbnd = -10.
         unit = "mm"
-        pp = PhysicalProperty(unit = unit, lo_bnd = lbnd)
+        pp = PhysicalProperty(unit=unit, lo_bnd=lbnd)
 
         qty = units.Quantity(-12., unit)
         self.assertRaises(ValueError, pp.__set__, MockClassEmpty, qty)
@@ -121,7 +121,7 @@ class StandaloneInstantiation(unittest.TestCase):
         """
         lbnd = -10.
         unit = "mm"
-        pp = PhysicalProperty(unit = unit, lo_bnd = lbnd)
+        pp = PhysicalProperty(unit=unit, lo_bnd=lbnd)
 
         # Note 1e3mm = 1m. Thus, 1m > 10mm.
         qty = units.Quantity(-1., "m")
