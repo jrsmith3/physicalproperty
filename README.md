@@ -25,7 +25,7 @@ pip install physicalproperty
 
 non-pip
 -------
-I'm assuming that if you are writing python code using descriptor classes  you know how to download the tarball and execute
+If you are writing python code using descriptor classes, you probably already know how to download the tarball and execute:
 
 ```
 python setup.py install
