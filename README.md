@@ -41,27 +41,31 @@ Lets say you want to implement a class which will return the energy flux of [bla
 >>> from physicalproperty import PhysicalProperty
 
 >>> class blackbody(object):
->>>     """
->>>     Model blackbody radiator
->>>     """
->>>     temp = PhysicalProperty(unit="K", lo_bnd=0)
->>>     emissivity = PhysicalProperty(lo_bnd=0, up_bnd=1)
->>>     def __init__(self, temp, emissivity=1):
->>>         self.temp = temp
->>>         self.emissivity = emissivity
->>>     def energy_flux(self):
->>>         """
->>>         Energy flux from blackbody radiator
->>>         """
->>>         flux = constants.sigma_sb * self.emissivity * self.temp**4
->>>         return flux.to("W/m2")
->>> 
+...     """
+...     Model blackbody radiator
+...     """
+...     temp = PhysicalProperty(unit="K", lo_bnd=0)
+...     emissivity = PhysicalProperty(lo_bnd=0, up_bnd=1)
+...     def __init__(self, temp, emissivity=1):
+...         self.temp = temp
+...         self.emissivity = emissivity
+...     def energy_flux(self):
+...         """
+...         Energy flux from blackbody radiator
+...         """
+...         flux = constants.sigma_sb * self.emissivity * self.temp**4
+...         return flux.to("W/m2")
+
 >>> bb = blackbody(temp=300)
 >>> bb.temp
+<Quantity 300.0 K>
 
 >>> bb.energy_flux()
+<Quantity 459.30021300000004 W / m2>
 
 >>> bb.temp = -10.2
+Traceback (most recent call last):
+ValueError: Cannot set less than 0.0 K
 
 ```
 
