@@ -13,6 +13,11 @@ Units and upper/lower bounds are defined along with the class definition; any at
 Constraining class attributes in this way provides assurance that, for example, an absolute temperature cannot accidentally be set to a negative value, a voltage can't accidentally be set to a capacitance, etc.
 
 
+Documentation
+=============
+Located on `readthedocs <http://physicalproperty.readthedocs.org>`_
+
+
 Installation
 ============
 pip
@@ -66,7 +71,7 @@ The code is licensed under the `MIT license <http://opensource.org/licenses/MIT>
 
 Contributing
 ============
-The repository is hosted on `github <https://github.com/jrsmith3/ibei>`_ . Feel free to fork this project and/or submit a pull request. Please notify me of any issues using the `issue tracker <https://github.com/jrsmith3/ibei/issues>`_ .
+The repository is hosted on `github <https://github.com/jrsmith3/physicalproperty>`_ . Feel free to fork this project and/or submit a pull request. Please notify me of any issues using the `issue tracker <https://github.com/jrsmith3/physicalproperty/issues>`_ .
 
 In the unlikely event that a community forms around this project, please adhere to the `Python Community code of conduct <https://www.python.org/psf/codeofconduct/>`_.
 
