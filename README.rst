@@ -17,54 +17,47 @@ Installation
 ============
 pip
 ---
-`physicalproperty` is [hosted on pypi](), so installation is simple:
+`physicalproperty` is `hosted on pypi <https://pypi.python.org/pypi/ibei/>`_, so installation is simple: ::
 
-```
-pip install physicalproperty
-```
+    pip install physicalproperty
 
 non-pip
 -------
-If you are writing python code using descriptor classes, you probably already know how to download the tarball and execute:
+If you are writing python code using descriptor classes, you probably already know how to download the tarball and execute: ::
 
-```
-python setup.py install
-```
+    python setup.py install
 
 
 Examples
 ========
-Lets say you want to implement a class which will return the energy flux of [blackbody emission]().
+Lets say you want to implement a class which will return the energy flux of `blackbody emission <https://en.wikipedia.org/wiki/Black-body_radiation>`_. ::
 
-```python
->>> from astropy import units, constants
->>> from physicalproperty import PhysicalProperty
+    >>> from astropy import units, constants
+    >>> from physicalproperty import PhysicalProperty
+    >>> class blackbody(object):
+    ...     """
+    ...     Model blackbody radiator
+    ...     """
+    ...     temp = PhysicalProperty(unit="K", lo_bnd=0)
+    ...     emissivity = PhysicalProperty(lo_bnd=0, up_bnd=1)
+    ...     def __init__(self, temp, emissivity=1):
+    ...         self.temp = temp
+    ...         self.emissivity = emissivity
+    ...     def energy_flux(self):
+    ...         """
+    ...         Energy flux from blackbody radiator
+    ...         """
+    ...         flux = constants.sigma_sb * self.emissivity * self.temp**4
+    ...         return flux.to("W/m2")
+    >>> bb = blackbody(temp=300)
+    >>> bb.temp
+    <Quantity 300.0 K>
+    >>> bb.energy_flux()
+    <Quantity 459.30021300000004 W / m2>
+    >>> bb.temp = -10.2
+    Traceback (most recent call last):
+    ValueError: Cannot set less than 0.0 K
 
->>> class blackbody(object):
-...     """
-...     Model blackbody radiator
-...     """
-...     temp = PhysicalProperty(unit="K", lo_bnd=0)
-...     emissivity = PhysicalProperty(lo_bnd=0, up_bnd=1)
-...     def __init__(self, temp, emissivity=1):
-...         self.temp = temp
-...         self.emissivity = emissivity
-...     def energy_flux(self):
-...         """
-...         Energy flux from blackbody radiator
-...         """
-...         flux = constants.sigma_sb * self.emissivity * self.temp**4
-...         return flux.to("W/m2")
->>> bb = blackbody(temp=300)
->>> bb.temp
-<Quantity 300.0 K>
->>> bb.energy_flux()
-<Quantity 459.30021300000004 W / m2>
->>> bb.temp = -10.2
-Traceback (most recent call last):
-ValueError: Cannot set less than 0.0 K
-
-```
 
 License
 =======
@@ -78,7 +71,3 @@ The repository is hosted on `github <https://github.com/jrsmith3/ibei>`_ . Feel 
 In the unlikely event that a community forms around this project, please adhere to the `Python Community code of conduct <https://www.python.org/psf/codeofconduct/>`_.
 
 Version numbers follow the `semver <http://semver.org>`_ rubric.
-
-
-API Reference
-=============
