@@ -24,12 +24,6 @@ Prerequisites
 -------------
 The `physicalproperty` package depends on `numpy <http://www.numpy.org>`_ and `astropy <http://www.astropy.org>`_. I recommend using the most recent release of the `Anaconda scientific python distribution <https://store.continuum.io/cshop/anaconda/>`_ by `Continuum Analytics <https://www.continuum.io>`_ to mitigate the difficulty of installing `numpy` on your system.
 
-pip
----
-Once you've installed the prerequisites, `pip` can be used to install the package. `physicalproperty` is `hosted on pypi <https://pypi.python.org/pypi/ibei/>`_, so installation is simple: ::
-
-    pip install physicalproperty
-
 non-pip
 -------
 If you are writing python code using descriptor classes, you probably already know how to download the tarball and execute: ::
