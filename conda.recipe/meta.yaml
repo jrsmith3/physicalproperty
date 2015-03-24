@@ -19,6 +19,9 @@ requirements:
         - astropy
 
 test:
+    files:
+        - ../test/test_PhysicalProperty.py
+        - ../test/test_find_PhysicalProperty.py
     requires:
         - nose
 
