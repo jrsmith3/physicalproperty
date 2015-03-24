@@ -20,15 +20,24 @@ Located on `ReadTheDocs <http://physicalproperty.readthedocs.org>`_.
 
 Installation
 ============
-Prerequisites
--------------
-The `physicalproperty` package depends on `numpy <http://www.numpy.org>`_ and `astropy <http://www.astropy.org>`_. I recommend using the most recent release of the `Anaconda scientific python distribution <https://store.continuum.io/cshop/anaconda/>`_ by `Continuum Analytics <https://www.continuum.io>`_ to mitigate the difficulty of installing `numpy` on your system.
+Dependencies
+------------
+* `numpy <http://www.numpy.org>`_
+* `astropy <http://www.astropy.org>`_
 
-non-pip
--------
-If you are writing python code using descriptor classes, you probably already know how to download the tarball and execute: ::
+Since this package depends on `numpy`, I've eschewed the tradiational pip/pypi approach for packaging and distribution and instead opted for `conda <http://conda.pydata.org/docs/index.html>`_/`binstar <https://binstar.org>`_. I recommend using the most recent release of the `Anaconda scientific python distribution <https://store.continuum.io/cshop/anaconda/>`_ by `Continuum Analytics <https://www.continuum.io>`_ to mitigate the difficulty of installing `numpy` on your system. Once you've installed anaconda, you can install the most recent version of `physicalproperty` like so::
 
-    python setup.py install
+    conda install -c jrsmith3 physicalproperty
+
+Building from source
+--------------------
+First, clone the `git repo <https://github.com/jrsmith3/physicalproperty>`_ or uncompress a tarball of the source. Second, execute the following command::
+
+    conda build path/to/physicalproperty/conda.recipe
+
+Finally, install the built package with::
+
+    conda install physicalproperty --use-local
 
 
 Examples
