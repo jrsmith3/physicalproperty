@@ -9,7 +9,5 @@
 
 API Reference
 =============
-.. toctree::
-   :maxdepth: 2
-
-   api
+.. automodule:: physicalproperty
+    :members: PhysicalProperty, find_PhysicalProperty
