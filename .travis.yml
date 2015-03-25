@@ -25,9 +25,9 @@ install:
   - conda info -a
 
   # Replace dep1 dep2 ... with your dependencies
-  - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION dep1 dep2 ...
+  - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION anaconda
   - source activate test-environment
-  - python setup.py install
+  - conda build conda.recipe
+  - conda install physicalproperty --use-local
 
-script:
-  # Your test script goes here
+script: nosetests
