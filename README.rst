@@ -25,6 +25,8 @@ Dependencies
 * `numpy <http://www.numpy.org>`_
 * `astropy <http://www.astropy.org>`_
 
+The `physicalproperty` module currently only works with python 2.7.
+
 Since this package depends on `numpy`, I've eschewed the tradiational pip/pypi approach for packaging and distribution and instead opted for `conda <http://conda.pydata.org/docs/index.html>`_/`binstar <https://binstar.org>`_. I recommend using the most recent release of the `Anaconda scientific python distribution <https://store.continuum.io/cshop/anaconda/>`_ by `Continuum Analytics <https://www.continuum.io>`_ to mitigate the difficulty of installing `numpy` on your system. Once you've installed anaconda, you can install the most recent version of `physicalproperty` like so::
 
     conda install -c jrsmith3 physicalproperty
