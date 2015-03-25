@@ -1,0 +1,8 @@
+1.0.1
+=====
+Properly package and distribute using conda
+
+This `physicalproperty` package was never hosted on pypi, and it never
+had a proper distribution strategy. As of release 1.0.1,
+`physicalproperty` is available on binstar.org/jrsmith3 via the
+`conda` environment and package manager.
