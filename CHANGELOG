@@ -1,3 +1,16 @@
+1.0.2
+=====
+Bugfix release
+
+The `physicalproperty` package is pure python and therefore not tied
+to a specific architecture or operating system. However, version 1.0.1
+was built on an OSX system and flagged as such. Therefore, packages
+will not build which depend on `physicalproperty` and are non-OSX.
+
+This release updates the conda build recipe to make this package
+architecture agnostic.
+
+
 1.0.1
 =====
 Properly package and distribute using conda
