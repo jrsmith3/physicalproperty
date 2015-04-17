@@ -11,7 +11,7 @@ about:
     summary: Descriptor class for physical property attributes
 
 source:
-    path: ..
+    git_url: ..
 
 requirements:
     build:
