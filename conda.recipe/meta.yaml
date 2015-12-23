@@ -8,6 +8,9 @@ package:
 source:
     path: ..
 
+build:
+    noarch_python: True
+
 requirements:
     build:
         - python
